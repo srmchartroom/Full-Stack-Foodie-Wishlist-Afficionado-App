@@ -1,0 +1,26 @@
+{
+  "name": "full-stack-foodie-wishlist-afficionado-app",
+  "version": "1.0.0",
+  "description": "This app is a Node.js based, express.js server that operates off a MVC basis and leverages handlebars to serve HTML to a front-end user.  Conceptually, this is a front-end web-based app that allows a user to enter their choice of specialty items to try and then keep track of what they tried after they try them. In game-like fashion the app allows the user to \"eat\" the item and deposits the item in list to keep track of what's eaten.  Data between routes, the controller, the server, node, and the HTML definer via handlebars is securely stored and manipulated by node from a mySQL database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srmchartroom/Full-Stack-Foodie-Wishlist-Afficionado-App.git"
+  },
+  "author": "srmchartroom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srmchartroom/Full-Stack-Foodie-Wishlist-Afficionado-App/issues"
+  },
+  "homepage": "https://github.com/srmchartroom/Full-Stack-Foodie-Wishlist-Afficionado-App#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
