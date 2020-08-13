@@ -1,0 +1,17 @@
+h1 {
+  font-family: "Fredericka the Great", cursive;
+}
+
+h2 {
+  font-family: "Fredericka the Great", cursive;
+}
+
+.jumbotron {
+  background: rgb(244, 207, 100);
+  background: radial-gradient(circle, rgba(244, 207, 100, 1) 35%, rgba(250, 151, 83, 1) 100%);
+}
+
+.wishlist {
+  height: 100%;
+  overflow-y: scroll;
+}

@@ -4,6 +4,12 @@ const orm = require("../config/orm.js");
 //! DONE ... DO NOT TOUCH ....
 //! Create the code to call the ORM functions using food specific input for the ORM
 const food = {
+  selectAll: function (cb) {
+    orm.selectAll(function (res) {
+      cb(res);
+    });
+  },
+
   selectAllToEat: function (cb) {
     orm.selectAllToEat(function (res) {
       cb(res);
