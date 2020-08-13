@@ -5,7 +5,6 @@ const connection = require("../config/connection.js");
 // METHODS NEEDED TO RETRIEVE & STORE DATA IN THE DB:
 
 const orm = {
-  
   //! DONE... DO NOT TOUCH...
   // Selects all foods (both those not eaten and those that been eaten)...
   selectAll: function (cb) {
@@ -19,8 +18,8 @@ const orm = {
 
   //! DONE... DO NOT TOUCH...
   // Selects all foods that haven't been eaten yet...
-  selectAllToEat: function(cb) {
-    connection.query("SELECT * FROM food_list WHERE devoured = false", (err, result) {
+  selectAllToEat: function (cb) {
+    connection.query("SELECT * FROM food_list WHERE devoured = false", (err, result) => {
       if (err) {
         throw err;
       }
@@ -30,8 +29,8 @@ const orm = {
 
   //! DONE... DO NOT TOUCH...
   // Selects all foods that have been eaten...
-  selectAllAte: function(cb) {
-    connection.query("SELECT * FROM food_list WHERE devoured = true", (err, result) {
+  selectAllAte: function (cb) {
+    connection.query("SELECT * FROM food_list WHERE devoured = true", (err, result) => {
       if (err) {
         throw err;
       }
@@ -43,18 +42,21 @@ const orm = {
   // Inserts a new burger into the wishlist
   insertOne: function (name, descrip, price, restaurant, cb) {
     connection.query(
-      `INSERT INTO food_list (food_name, food_descrip, price, food_type, restaurant) VALUES (?,?,?,"burger",?) `, [name, descrip, price, restaurant], (err,result) => {
+      `INSERT INTO food_list (food_name, food_descrip, price, food_type, restaurant) VALUES (?,?,?,"burger",?) `,
+      [name, descrip, price, restaurant],
+      (err, result) => {
         if (err) {
           throw err;
         }
         cb(result);
-      });
-    },
+      }
+    );
+  },
 
   //! DONE .... DO NOT TOUCH...
   // Updates the burger to be devoured when button clicked
   updateOne: function (burgerId, cb) {
-    connection.query(`UPDATE food_list SET devoured = true WHERE id = ?`, [burgerId], (err,result) => {
+    connection.query(`UPDATE food_list SET devoured = true WHERE id = ?`, [burgerId], (err, result) => {
       if (err) {
         throw err;
       }
@@ -71,8 +73,7 @@ const orm = {
       }
       cb(result);
     });
-  }
-
+  },
 }; // END OF ORM OBJECT
 
 // Export the orm object for the model (food.js).
