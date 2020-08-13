@@ -21,45 +21,30 @@ router.get("/", function (req, res) {
 
 // POST ROUTE (Crud - create)
 router.post("/api/food_list", function (req, res) {
-  food.insertOne(
-    ["food_name", "food_descrip", "price", "food_type", "restaurant"],
-    [req.body.food_name, req.body.food_descrip, req.body.price, req.body.food_type, req.body.restaurant],
-    function (result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
-    }
-  );
+  food.insertOne(req.body.food_name, req.body.food_descrip, req.body.price, req.body.restaurant, function (result) {
+    // Send back the ID of the new burger
+    res.json({ id: result.insertId });
+  });
 });
 
 // PUT ROUTE (crUd - update)
 router.put("/api/food_list/:id", function (req, res) {
-  const condition = "id = " + req.params.id;
-  console.log("condition", condition);
-  food.updateOne(
-    {
-      food_name: req.body.food_name,
-      food_descrip: req.body.food_descrip,
-      price: req.body.price,
-      food_type: req.body.food_type,
-      restaurant: req.body.restaurant,
-    },
-    condition,
-    function (result) {
-      if (result.changedRows == 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-      }
+  // const condition = "id = " + req.params.id;
+  // console.log("condition", condition);
+  food.updateOne(req.params.id, function (result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
     }
-  );
+  });
 });
 
 // DELETE ROUTE (cruD - delete)
 router.delete("/api/food_list/:id", function (req, res) {
-  const condition = "id = " + req.params.id;
-
-  food.deleteOne(condition, function (result) {
+  // const condition = "id = " + req.params.id;
+  food.deleteOne(req.params.id, function (result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
