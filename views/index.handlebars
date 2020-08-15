@@ -1,36 +1,98 @@
-<h1>Foodie Wishlight Tracker</h1>
+<div class="container">
+  <div class="row">
+    <div id="addFood" class="col-3 col-12-sm mb-5">
+      <h2 class="ttl">Add a Burger</h2>
+      <hr>
+      <form class="newFood">
+        <div class="form-group">
+          <label for="brg_n">Burger Name:</label>
+          <input type="text" class="form-control" id="brg_n" name="brg_n">
+        </div>
+        <div class="form-group">
+          <label for="brg_d">Description:</label>
+          <textarea class="form-control" id="brg_d" rows="3" name="brg_d"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="brg_p">Price:</label>
+          <input type="text" class="form-control" id="brg_p" name="brg_p">
+        </div>
+        <div class="form-group">
+          <label for="brg_r">Restaurant:</label>
+          <input type="text" class="form-control" id="brg_r" name="brg_r">
+        </div>
+        <br>
+        <button type="submit" id="add-btn" class="btn btn-warning">Add to Wishlist</button>
+      </form>
+    </div> <!-- END OF ADDFOOD -->
+    
+    <div class="col-5 col-12-sm mb-5">
+      <h2 class="ttl">Wishlist</h2>
+      <hr>
+      <div id="wishlist">
+        <ul>
+          {{#each food_list}}
+            {{#unless devoured}}
+              {{> burgers/burger-block devoured=false}}
+            {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div> <!-- END OF WISHLIST -->
+    <div class="col-4 col-12-sm mb-5">
+      <h2 class="ttl">Foods eaten</h2>
+      <hr>
+      <div id="eaten">
+        <ul>
+          {{#each food_list}}
+            {{#if devoured}}
+              {{> burgers/eaten-block devoured=true}}
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div> <!-- END OF FOODS EATEN -->
+  
+  </div> <!-- END OF ROW -->
+</div> <!-- END OF PARENT CONTAINER -->
 
-<ul>
-  {{#each food_list}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<!-- Modal with update form is below this point -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg px-5 py-5">
+      <div class="modal-content px-5 py-5">
+			<form id="updateForm">
+        <h2><span id="modalName"></span></h2>
+        Rating:
+				<div class="form-group brg_rating">
+          <div id="brg_rating" class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="rating" id="rating1" value="1">
+					  <label for="form-check-label" for="rating1">1</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="rating" id="rating2" value="2">
+					  <label for="form-check-label" for="rating2">2</label>
+				  </div>
+				  <div class="form-check form-check-inline ">
+					  <input class="form-check-input" type="radio" name="rating" id="rating3" value="3">
+					  <label for="form-check-label" for="rating1">3</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="rating" id="rating4" value="4">
+					  <label for="form-check-label" for="rating1">4</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="rating" id="rating5" value="5">
+					  <label for="form-check-label" for="rating1">5</label>
+				  </div>
+				  <div class="form-group">
+					  <label for="brg_notes">Description:</label>
+					  <textarea class="form-control" id="brg_notes" rows="3" name="notes">{{notes}}</textarea>
+				  </div>
+        </div>
+				  <br>
+        <button type="submit" id="updateNotes-btn" class="btn updateNotes-btn btn-warning">Submit</button>
+			</form>
+      </div>
+		</div>
+	</div>
 
-<h2>Foods eaten</h2>
-
-<ul>
-  {{#each food_list}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="brg">Burger Name:</label>
-    <input type="text" id="brg" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="devoured">Devour?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Not Eaten<br>
-    <input type="radio" name="devoured" value="0"> Eaten
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+  

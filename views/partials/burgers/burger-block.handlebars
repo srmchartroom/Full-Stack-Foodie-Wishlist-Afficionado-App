@@ -1,13 +1,11 @@
-<li>
-	<h2>{{food_name}} <span style="font-size: 50%;"><sup>{{food_type}}</sup></span></h2>
-    <p>${{price}} | {{restaurant}}</p>
+<li data={{id}}>
+	<h4><strong>{{food_name}}</strong></h4>
+    <p class="small">{{food_type}} | ${{price}} | {{restaurant}}</p>
     <p>{{food_descrip}}</p>
     
-
-	<button class="devour-btn" data-id="{{id}}">Devour it!
-	</button>
-
-	<!-- //TODO Creating cat delete button -->
-	<button class="delete-btn" data-id="{{id}}">Remove From List
-	</button>
+	<div class="btn-grp">
+		<button class="btn devour-btn updateModal-btn btn-warning" data-fname={{food_name}} data-toggle="modal" data-target="#updateModal" data-id={{id}}>Yum! Devour it!</button>
+		<button class="btn delete-btn btn-dark" data-id={{id}}>Yuck. Delete it.</button>
+	</div>
+	
 </li>

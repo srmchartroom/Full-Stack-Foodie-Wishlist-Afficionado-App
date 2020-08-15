@@ -1,5 +1,3 @@
-//! DONE.  NO FURTHER CHANGES.
-
 const express = require("express");
 // Set Handlebars.
 const exphbs = require("express-handlebars");

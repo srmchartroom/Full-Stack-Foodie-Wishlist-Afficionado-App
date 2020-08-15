@@ -1,9 +1,26 @@
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Fredericka the Great", cursive;
 }
 
-h2 {
-  font-family: "Fredericka the Great", cursive;
+p {
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 25px;
+}
+
+.ttl {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.btn-grp {
+  padding-top: 5px;
 }
 
 .jumbotron {
@@ -11,7 +28,15 @@ h2 {
   background: radial-gradient(circle, rgba(244, 207, 100, 1) 35%, rgba(250, 151, 83, 1) 100%);
 }
 
-.wishlist {
-  height: 100%;
-  overflow-y: scroll;
+#wishlist,
+#eaten {
+  height: 65vh;
+  overflow-y: auto;
 }
+
+@media only screen and (max-width: 600px) {
+  #wishlist,
+  #eaten {
+    height: unset;
+    overflow: default;
+  } 

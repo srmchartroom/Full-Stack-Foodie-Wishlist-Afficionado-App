@@ -1,4 +1,7 @@
-//! DONE.  DON'T CHANGE...
+/*
+The Purpose of this file is separate our connection code from the server.js file.  
+This modularizes our connection and prevents unnecessarily bloating and complicating our server.js file.
+*/
 
 // Set up MySQL connection.
 const mysql = require("mysql");

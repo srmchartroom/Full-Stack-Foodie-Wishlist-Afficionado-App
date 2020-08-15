@@ -1,0 +1,11 @@
+<li data={{id}}>
+	<h4><strong>{{food_name}}</strong></h4>
+    <p class="small">Rating: {{rating}} | ${{price}} | </p>
+    <p class="small">{{restaurant}}</p>
+    <p class="fnotes">{{notes}}</p>
+    
+	<div class="btn-grp">
+		<button class="btn eaten-btn updateModal-btn btn-warning" data-fname={{food_name}} data-frating={{rating}} data-toggle="modal" data-target="#updateModal" data-id={{id}}>Update Entry</button>
+	</div>
+	
+</li>
