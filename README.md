@@ -27,7 +27,7 @@ This app is a Node.js based, express.js server that operates off a MVC basis and
 
 The below video provides an overview of the CLI README Generator, the code involved and how it works, as well as a demo of the generator in action.
 
-[![OVERVIEW: THE FULLSTACK FOODIE WISHLIST APP IN ACTION](https://chartroomcreative.com/gitassets/FULLSTACK-FOODIE-WISHLIST-APP.png)](https://chartroomcreative.com/gitassets/FULLSTACK-FOODIE-WISHLIST-APP.mp4)
+[![CLICK TO SEE LARGER MP4 OF DEMO](https://chartroomcreative.com/gitassets/FULLSTACK-FOODIE-WISHLIST-APP.gif)](https://chartroomcreative.com/gitassets/FULLSTACK-FOODIE-WISHLIST-APP.mp4)
 
 ## License
 
